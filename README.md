@@ -10,12 +10,12 @@ The program does all the work for me. It puts my readings in chronological order
 #### Usage:
 
 There are two ways of running the program
-- [default mode](https://github.com/code50/107244000/tree/main/project#default-mode)
-- [advanced mode](https://github.com/code50/107244000/tree/main/project#advanced-mode)
+- [default mode](https://github.com/scalvaruso/utility#default-mode)
+- [advanced mode](https://github.com/scalvaruso/utility#advanced-mode)
 <br/>
 
-The [default mode](https://github.com/code50/107244000/tree/main/project#default-mode) runs the program with the default settings, reading and writing the data from the default file `utilities.csv`.<br/>
-The [advanced mode](https://github.com/code50/107244000/tree/main/project#advanced-mode) allows to specify the origin file and the destination file, to merge two existing files to a new one, or simply to print a table from a specific file.<br/>
+The [default mode](https://github.com/scalvaruso/utility#default-mode) runs the program with the default settings, reading and writing the data from the default file `utilities.csv`.<br/>
+The [advanced mode](https://github.com/scalvaruso/utility#advanced-mode) allows to specify the origin file and the destination file, to merge two existing files to a new one, or simply to print a table from a specific file.<br/>
 
 
 #### Default mode:
@@ -154,16 +154,16 @@ $ █
 
 To use the <font color=blue><b>advanced mode</b></font> you will need to use arguments after `python utility.py`
 
-- [-f, --file](https://github.com/code50/107244000/tree/main/project#-f---file)<br/>
-the argument [--file](https://github.com/code50/107244000/tree/main/project#-f---file) allows to specify the CSV file with the list of readings to use<br/>
-If [--file](https://github.com/code50/107244000/tree/main/project#-f---file) is not used the default used file is `utilities.csv`
-- [-m, --merge](https://github.com/code50/107244000/tree/main/project#-m---merge)<br/>
-the argument [--merge](https://github.com/code50/107244000/tree/main/project#-m---merge) allows to merge two specified CSV files in the default `merged.csv` file
-- [-p, --print](https://github.com/code50/107244000/tree/main/project#-p---print)<br/>
-the argument [--print](https://github.com/code50/107244000/tree/main/project#-p---print) allows to print a table with the list of readings from a specified CSV file
-- [-s, --save](https://github.com/code50/107244000/tree/main/project#-s---save)<br/>
-the argument [--save](https://github.com/code50/107244000/tree/main/project#-s---save) allows to specify a CSV file where to write the new or updated list of readings<br/>
-If [--save](https://github.com/code50/107244000/tree/main/project#-s---save) is not used, the new data will be saved as `utilities.csv`, as the file specified by [--file](https://github.com/code50/107244000/tree/main/project#-f---file), or as `merged.csv` if you are using the [--merge](https://github.com/code50/107244000/tree/main/project#-m---merge) argument
+- [-f, --file](https://github.com/scalvaruso/utility#-f---file)<br/>
+the argument [--file](https://github.com/scalvaruso/utility#-f---file) allows to specify the CSV file with the list of readings to use<br/>
+If [--file](https://github.com/scalvaruso/utility#-f---file) is not used the default used file is `utilities.csv`
+- [-m, --merge](https://github.com/scalvaruso/utility#-m---merge)<br/>
+the argument [--merge](https://github.com/scalvaruso/utility#-m---merge) allows to merge two specified CSV files in the default `merged.csv` file
+- [-p, --print](https://github.com/scalvaruso/utility#-p---print)<br/>
+the argument [--print](https://github.com/scalvaruso/utility#-p---print) allows to print a table with the list of readings from a specified CSV file
+- [-s, --save](https://github.com/scalvaruso/utility#-s---save)<br/>
+the argument [--save](https://github.com/scalvaruso/utility#-s---save) allows to specify a CSV file where to write the new or updated list of readings<br/>
+If [--save](https://github.com/scalvaruso/utility#-s---save) is not used, the new data will be saved as `utilities.csv`, as the file specified by [--file](https://github.com/scalvaruso/utility#-f---file), or as `merged.csv` if you are using the [--merge](https://github.com/scalvaruso/utility#-m---merge) argument
 
 Let's see their usage
 
@@ -216,7 +216,7 @@ Do you want to create the file demo.csv? [y/n] n
 $ █
 ```
 
-> If no [--save](https://github.com/code50/107244000/tree/main/project#-s---save) file is specified, your inputs will be saved to the `--file` argument
+> If no [--save](https://github.com/scalvaruso/utility#-s---save) file is specified, your inputs will be saved to the `--file` argument
 
 ##### -m, --merge
 
@@ -255,7 +255,7 @@ Checking for the existence of the file ut_ma.csv...
 File ut_ma.csv already exist! Do you want to merge it? [y/n] █
 ```
 
-> If no [--save](https://github.com/code50/107244000/tree/main/project#-s---save) file is specified, your data will be saved to the default file `merged.csv`
+> If no [--save](https://github.com/scalvaruso/utility#-s---save) file is specified, your data will be saved to the default file `merged.csv`
 
 ##### -p, --print
 
