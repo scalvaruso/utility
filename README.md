@@ -20,10 +20,10 @@ The [advanced mode](https://github.com/code50/107244000/tree/main/project#advanc
 
 #### Default mode:
 
-To use the <font color=blue><b>default mode</b></font> simply type `python project.py`.<br/>
+To use the <font color=blue><b>default mode</b></font> simply type `python utility.py`.<br/>
 The program will prompt the user asking for the date of the new readings in the format YYYY-MM-DD
 ```
-python project.py
+python utility.py
 Date of new readings (YYYY-MM-DD): █
 ```
 You will receive an error message and prompt back if you will insert a date
@@ -152,7 +152,7 @@ $ █
 
 #### Advanced mode:
 
-To use the <font color=blue><b>advanced mode</b></font> you will need to use arguments after `python project.py`
+To use the <font color=blue><b>advanced mode</b></font> you will need to use arguments after `python utility.py`
 
 - [-f, --file](https://github.com/code50/107244000/tree/main/project#-f---file)<br/>
 the argument [--file](https://github.com/code50/107244000/tree/main/project#-f---file) allows to specify the CSV file with the list of readings to use<br/>
@@ -170,11 +170,11 @@ Let's see their usage
 ##### -f, --file
 
 The `--file` argument is used to specify a CSV file different from the default one.
-Typing `python project.py -f demo.csv` will start the program reading data from the `demo.csv` file.<br/>
+Typing `python utility.py -f demo.csv` will start the program reading data from the `demo.csv` file.<br/>
 If the file does not exist, the program will automatically create the file
 
 ```
-$ python project.py -f demo.csv
+$ python utility.py -f demo.csv
 
 The file demo.csv has been created
 
@@ -184,7 +184,7 @@ Date of new readings (YYYY-MM-DD): █
 The program works only with CSV files, therefore you will receive an error message if you try to use a different extension, but the program will not exit.<br/>
 Program will keep running, and looking for the existence of a file with same name and CSV extension
 ```
-$ python project.py -f demo.txt
+$ python utility.py -f demo.txt
 
 This program works only with CSV files
 
@@ -224,7 +224,7 @@ The `--merge` option requires <u>two arguments</u> and is used to merge the two 
 In case of double values for the same date, you will be prompted to choose which data you want to keep
 
 ```
-$ python project.py -m ut_ma.csv ut_mb.csv
+$ python utility.py -m ut_ma.csv ut_mb.csv
 
  There is already a reading for  2014-10-14
 +-----+------------+------+-------------+-----+-------+-----+-----+----+------+-----+-------+----+------+-----+
@@ -237,7 +237,7 @@ $ python project.py -m ut_ma.csv ut_mb.csv
 ```
 In case one or more files in the argument do not exist the program will give an error message and terminate
 ```
-$ python project.py -m ut_ma.csv ut_b.csv
+$ python utility.py -m ut_ma.csv ut_b.csv
 
 The file ut_b.csv does not exist!
 
@@ -246,7 +246,7 @@ $ █
 In case one or more files in the argument have no CSV extension, the program will look for the existence of a CSV file with same name and ask whether you want to use those files
 
 ```
-$ python project.py -m ut_ma.txt ut_mb.csv
+$ python utility.py -m ut_ma.txt ut_mb.csv
 
 Only CSV files can be merged
 
@@ -262,7 +262,7 @@ File ut_ma.csv already exist! Do you want to merge it? [y/n] █
 The `--print` option allows to print a table with the data from the specified CSV file
 
 ```
-$ python project.py -p ut_2.csv
+$ python utility.py -p ut_2.csv
 
 Utilities
 +------------+------+-------------+-----+-------+-----+-----+-----+------+-----+-------+-----+------+-----+
@@ -277,11 +277,11 @@ $ █
 ```
 In case the file in the argument does not exist or has an extension different from CSV the program will give an error message and terminate
 ```
-$ python project.py -p utt.csv
+$ python utility.py -p utt.csv
 
 The file utt.csv does not exist!
 
-$ python project.py -p ut_e.txt
+$ python utility.py -p ut_e.txt
 
 Only CSV files can be printed
 
@@ -294,7 +294,7 @@ The `--save` option allows to specify a different file where you want to save yo
 In case the file in the argument have no CSV extension, the program will look for the existence of a CSV file with same name and ask whether you want to create or use that file
 
 ```
-$ python project.py -s ut_e.txt
+$ python utility.py -s ut_e.txt
 
 This program can save only CSV files
 
@@ -302,7 +302,7 @@ Checking for the existence of the file ut_e.csv...
 
 File ut_e.csv already exist! Do you want to overwrite it? [y/n] n
 
-$ python project.py -s utt.txt
+$ python utility.py -s utt.txt
 
 This program can save only CSV files
 
