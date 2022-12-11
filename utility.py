@@ -28,7 +28,7 @@ from tabulate import tabulate
 i = inflect.engine()
 
 
-# Set Variables
+# Set Constant Variables
 D = "Date"
 E = "\x1b[38;5;9;1mElectricity\x1b[0m"
 G = "\x1b[38;5;11;1mGas\x1b[0m"
