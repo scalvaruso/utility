@@ -479,7 +479,7 @@ def settings(args):
 
 def check_csv(name, act):
 
-    m = re.match(r"([a-zA-Z0-9_]+)(\.[a-zA-Z0-9_]+)*?", name)
+    m = re.match(r"([a-zA-Z0-9_/]+)(\.[a-zA-Z0-9_/]+)*?", name)
     name = m.group(1) + ".csv"
     print(f"Checking for the existence of the file \x1b[4m{name}\x1b[0m...\n")
     
