@@ -1,26 +1,28 @@
 # UTILITY
-#### Video Demo: <https://youtu.be/mjHiKE__H6k>
-#### Description:
 
-Utility is a simple program to keep record of common utilities (<b>Electricity</b>, <b>Gas</b>, and <b>Water</b>).<br/>
-For years I recorded my utilities in excel. It sounds easy, but to get some insight on the usage of those utilities it was not sufficient to record the values. Every time I had to copy-past the functions for any new readings, and anytime I had to manually record the data in chronological order, that means that for any reading on a date between two already recorded I had to insert lines, copy functions, insert values, and finally get the results.<br/>
+## Video Demo: <https://youtu.be/mjHiKE__H6k>
+
+## Description
+
+Utility is a simple program to keep record of common utilities (<b>Electricity</b>, <b>Gas</b>, and <b>Water</b>).<br>
+For years I recorded my utilities in excel. It sounds easy, but to get some insight on the usage of those utilities it was not sufficient to record the values. Every time I had to copy-past the functions for any new readings, and anytime I had to manually record the data in chronological order, that means that for any reading on a date between two already recorded I had to insert lines, copy functions, insert values, and finally get the results.<br>
 With Utility I just start the program, insert the date, the readings... <b>Done!</b> On the screen is a table with my data in chronological order showing the daily and average usage of every utilities.
 The program does all the work for me. It puts my readings in chronological order, checks for double recordings, checks the validity of my data, and finally save everything in a CSV file, and as already mentioned print an easy to read table.
 
-#### Usage:
+## Usage:
 
 There are two ways of running the program
 - [default mode](https://github.com/scalvaruso/utility#default-mode)
 - [advanced mode](https://github.com/scalvaruso/utility#advanced-mode)
-<br/>
+<br>
 
-The [default mode](https://github.com/scalvaruso/utility#default-mode) runs the program with the default settings, reading and writing the data from the default file `utilities.csv`.<br/>
-The [advanced mode](https://github.com/scalvaruso/utility#advanced-mode) allows to specify the origin file and the destination file, to merge two existing files to a new one, or simply to print a table from a specific file.<br/>
+The [default mode](https://github.com/scalvaruso/utility#default-mode) runs the program with the default settings, reading and writing the data from the default file `utilities.csv`.<br>
+The [advanced mode](https://github.com/scalvaruso/utility#advanced-mode) allows to specify the origin file and the destination file, to merge two existing files to a new one, or simply to print a table from a specific file.<br>
 
 
-#### Default mode:
+### Default mode:
 
-To use the <font color=blue><b>default mode</b></font> simply type `python utility.py`.<br/>
+To use the <font color=blue><b>default mode</b></font> simply type `python utility.py`.<br>
 The program will prompt the user asking for the date of the new readings in the format YYYY-MM-DD
 ```
 python utility.py
@@ -150,28 +152,26 @@ $ █
 
 </details>
 
-#### Advanced mode:
+### Advanced mode
 
 To use the <font color=blue><b>advanced mode</b></font> you will need to use arguments after `python utility.py`
 
-- [-f, --file](https://github.com/scalvaruso/utility#-f---file)<br/>
-the argument [--file](https://github.com/scalvaruso/utility#-f---file) allows to specify the CSV file with the list of readings to use<br/>
+- [-f, --file](https://github.com/scalvaruso/utility#-f---file)<br>
+the argument [--file](https://github.com/scalvaruso/utility#-f---file) allows to specify the CSV file with the list of readings to use<br>
 If [--file](https://github.com/scalvaruso/utility#-f---file) is not used the default used file is `utilities.csv`
-- [-m, --merge](https://github.com/scalvaruso/utility#-m---merge)<br/>
+- [-m, --merge](https://github.com/scalvaruso/utility#-m---merge)<br>
 the argument [--merge](https://github.com/scalvaruso/utility#-m---merge) allows to merge two specified CSV files in the default `merged.csv` file
-- [-p, --print](https://github.com/scalvaruso/utility#-p---print)<br/>
+- [-p, --print](https://github.com/scalvaruso/utility#-p---print)<br>
 the argument [--print](https://github.com/scalvaruso/utility#-p---print) allows to print a table with the list of readings from a specified CSV file
-- [-s, --save](https://github.com/scalvaruso/utility#-s---save)<br/>
-the argument [--save](https://github.com/scalvaruso/utility#-s---save) allows to specify a CSV file where to write the new or updated list of readings<br/>
-If [--save](https://github.com/scalvaruso/utility#-s---save) is not used, the new data will be saved as `utilities.csv`, as the file specified by [--file](https://github.com/scalvaruso/utility#-f---file), or as `merged.csv` if you are using the [--merge](https://github.com/scalvaruso/utility#-m---merge) argument
+- [-s, --save](https://github.com/scalvaruso/utility#-s---save)<br>
+the argument [--save](https://github.com/scalvaruso/utility#-s---save) allows to specify a CSV file where to write the new or updated list of readings<br>If [--save](https://github.com/scalvaruso/utility#-s---save) is not used, the new data will be saved as `utilities.csv`, as the file specified by [--file](https://github.com/scalvaruso/utility#-f---file), or as `merged.csv` if you are using the [--merge](https://github.com/scalvaruso/utility#-m---merge) argument
 
 Let's see their usage
 
-##### -f, --file
+#### -f, --file
 
 The `--file` argument is used to specify a CSV file different from the default one.
-Typing `python utility.py -f demo.csv` will start the program reading data from the `demo.csv` file.<br/>
-If the file does not exist, the program will automatically create the file
+Typing `python utility.py -f demo.csv` will start the program reading data from the `demo.csv` file.<br>If the file does not exist, the program will automatically create the file
 
 ```
 $ python utility.py -f demo.csv
@@ -181,36 +181,37 @@ The file demo.csv has been created
 Date of new readings (YYYY-MM-DD): █
 ```
 
-The program works only with CSV files, therefore you will receive an error message if you try to use a different extension, but the program will not exit.<br/>
-Program will keep running, and looking for the existence of a file with same name and CSV extension
-```
+The program works only with CSV files, therefore you will receive an error message if you try to use a different extension, but the program will not exit. <br> Program will keep running, and looking for the existence of a file with same name and CSV extension
+
+```text
 $ python utility.py -f demo.txt
 
 This program works only with CSV files
 
 Checking for the existence of the file demo.csv...
 ```
-If the file does not exist you will be asked if you want to create it.<br/>
-In case of positive answer [<b>y</b>/n] the program will create the file and start
 
-```
+If the file does not exist you will be asked if you want to create it.<br>In case of positive answer [<b>y</b>/n] the program will create the file and start
+
+```text
 Do you want to create the file demo.csv? [y/n] y
 
 The file demo.csv has been created
 
 Date of new readings (YYYY-MM-DD): █
 ```
-If the file exists you will be asked if you want to open it.<br/>
-In case of positive answer [<b>y</b>/n] the program will read the data from the file and start
 
-```
+If the file exists you will be asked if you want to open it.<br>In case of positive answer [<b>y</b>/n] the program will read the data from the file and start
+
+```text
 File demo.csv already exist! Do you want to open it? [y/n] y
 
 Date of new readings (YYYY-MM-DD): █
 ```
+
 In case of negative answer [y/<b>n</b>] the program will simply exit
 
-```
+```text
 Do you want to create the file demo.csv? [y/n] n
 
 $ █
@@ -218,12 +219,11 @@ $ █
 
 > If no [--save](https://github.com/scalvaruso/utility#-s---save) file is specified, your inputs will be saved to the `--file` argument
 
-##### -m, --merge
+#### -m, --merge
 
-The `--merge` option requires <u>two arguments</u> and is used to merge the two CSV files in the arguments to a new list, print the table with the merged data and save them to a new CSV file.<br/>
-In case of double values for the same date, you will be prompted to choose which data you want to keep
+The `--merge` option requires <u>two arguments</u> and is used to merge the two CSV files in the arguments to a new list, print the table with the merged data and save them to a new CSV file.<br> In case of double values for the same date, you will be prompted to choose which data you want to keep
 
-```
+```text
 $ python utility.py -m ut_ma.csv ut_mb.csv
 
  There is already a reading for  2014-10-14
@@ -235,17 +235,20 @@ $ python utility.py -m ut_ma.csv ut_mb.csv
 +-----+------------+------+-------------+-----+-------+-----+-----+----+------+-----+-------+----+------+-----+
  Would you like to overwrite it?  [y/n] █
 ```
+
 In case one or more files in the argument do not exist the program will give an error message and terminate
-```
+
+```text
 $ python utility.py -m ut_ma.csv ut_b.csv
 
 The file ut_b.csv does not exist!
 
 $ █
 ```
+
 In case one or more files in the argument have no CSV extension, the program will look for the existence of a CSV file with same name and ask whether you want to use those files
 
-```
+```text
 $ python utility.py -m ut_ma.txt ut_mb.csv
 
 Only CSV files can be merged
@@ -257,11 +260,11 @@ File ut_ma.csv already exist! Do you want to merge it? [y/n] █
 
 > If no [--save](https://github.com/scalvaruso/utility#-s---save) file is specified, your data will be saved to the default file `merged.csv`
 
-##### -p, --print
+#### -p, --print
 
 The `--print` option allows to print a table with the data from the specified CSV file
 
-```
+```text
 $ python utility.py -p ut_2.csv
 
 Utilities
@@ -275,8 +278,10 @@ Values in orange are estimated
 
 $ █
 ```
+
 In case the file in the argument does not exist or has an extension different from CSV the program will give an error message and terminate
-```
+
+```text
 $ python utility.py -p utt.csv
 
 The file utt.csv does not exist!
@@ -288,12 +293,11 @@ Only CSV files can be printed
 $ █
 ```
 
-##### -s, --save
+#### -s, --save
 
-The `--save` option allows to specify a different file where you want to save your data.<br/>
-In case the file in the argument have no CSV extension, the program will look for the existence of a CSV file with same name and ask whether you want to create or use that file
+The `--save` option allows to specify a different file where you want to save your data.<br>In case the file in the argument have no CSV extension, the program will look for the existence of a CSV file with same name and ask whether you want to create or use that file
 
-```
+```text
 $ python utility.py -s ut_e.txt
 
 This program can save only CSV files
