@@ -43,16 +43,16 @@ D = "Date"
 E = "\x1b[38;5;9;1mElectricity\x1b[0m"
 G = "\x1b[38;5;11;1mGas\x1b[0m"
 W = "\x1b[38;5;14;1mWater\x1b[0m"
-UT_0 = Utilities.read("ut_0_test.csv")  #   empty csv file
-UT_1 = Utilities.read("ut_1_test.csv")  #   1 entry, values = 0
-UT_2 = Utilities.read("ut_2_test.csv")  #   2 entries
-UT_A = Utilities.read("ut_a_test.csv")  #   entries set a
-UT_B = Utilities.read("ut_b_test.csv")  #   entries set b
-UT_E = Utilities.read("ut_e_test.csv")  #   several entries
-UT_MA = Utilities.read("ut_ma_test.csv")  #   merged UT_A and UT_B no overwrite
-UT_MB = Utilities.read("ut_mb_test.csv")  #   merged UT_A and UT_B overwrite doubles
-UT_R = Utilities.read("ut_r_test.csv")  #   raw readings no statitstics
-UT_S = Utilities.read("ut_s_test.csv")  #   statistics on ut_r_test.csv
+UT_0 = Utilities.read("test_utility/ut_0_test.csv")  #   empty csv file
+UT_1 = Utilities.read("test_utility/ut_1_test.csv")  #   1 entry, values = 0
+UT_2 = Utilities.read("test_utility/ut_2_test.csv")  #   2 entries
+UT_A = Utilities.read("test_utility/ut_a_test.csv")  #   entries set a
+UT_B = Utilities.read("test_utility/ut_b_test.csv")  #   entries set b
+UT_E = Utilities.read("test_utility/ut_e_test.csv")  #   several entries
+UT_MA = Utilities.read("test_utility/ut_ma_test.csv")  #   merged UT_A and UT_B no overwrite
+UT_MB = Utilities.read("test_utility/ut_mb_test.csv")  #   merged UT_A and UT_B overwrite doubles
+UT_R = Utilities.read("test_utility/ut_r_test.csv")  #   raw readings no statitstics
+UT_S = Utilities.read("test_utility/ut_s_test.csv")  #   statistics on ut_r_test.csv
 
 
 #   set up utilities
@@ -130,9 +130,9 @@ def test_Duration_str():
 
 #   testing Class Utilities
 def test_Utilities_read():
-    assert Utilities.read("ut_1_test.csv").values == utilities.values
-    assert Utilities.read("ut_1_test.csv").ukeys == utilities.ukeys
-    assert Utilities.read("ut_1_test.csv").entries == utilities.entries
+    assert Utilities.read("test_utility/ut_1_test.csv").values == utilities.values
+    assert Utilities.read("test_utility/ut_1_test.csv").ukeys == utilities.ukeys
+    assert Utilities.read("test_utility/ut_1_test.csv").entries == utilities.entries
 
 
 def test_Utilities_write():
@@ -282,7 +282,7 @@ def test_settings_s_noncsv_yes(monkeypatch):
 def test_settings_merge_no(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "n")
     with pytest.raises(SystemExit) as excinfo:
-        arg_in = "-m ut_a_test.csv ut_b_test.csv".split()
+        arg_in = "-m test_utility/ut_a_test.csv test_utility/ut_b_test.csv".split()
         args = parser.parse_args(arg_in)
         settings(args)
         assert excinfo.value.code == None
@@ -296,7 +296,7 @@ def test_settings_merge_no(monkeypatch):
 def test_settings_merge_yes(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
     with pytest.raises(SystemExit) as excinfo:
-        arg_in = "-m ut_a_test.csv ut_b_test.csv".split()
+        arg_in = "-m test_utility/ut_a_test.csv test_utility/ut_b_test.csv".split()
         args = parser.parse_args(arg_in)
         settings(args)
         assert excinfo.value.code == None
@@ -322,7 +322,7 @@ def test_settings_merge_nofile():
 def test_settings_merge_nocsv_no(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "n")
     with pytest.raises(SystemExit) as excinfo:
-        arg_in = "-m ut_0_test ut_2_test".split()
+        arg_in = "-m test_utility/ut_0_test test_utility/ut_2_test".split()
         args = parser.parse_args(arg_in)
         settings(args)
         assert excinfo.value.code == None
@@ -335,22 +335,22 @@ def test_settings_merge_nocsv_no(monkeypatch):
 def test_settings_merge_nocsv_yes(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
     with pytest.raises(SystemExit) as excinfo:
-        arg_in = "-m ut_0_test ut_2_test".split()
+        arg_in = "-m test_utility/ut_0_test test_utility/ut_2_test".split()
         args = parser.parse_args(arg_in)
         settings(args)
         assert excinfo.value.code == None
     with path("merged.csv") as p:
         assert p.is_file() == True
-    assert Utilities.read("merged.csv").values == Utilities.read("ut_2_test.csv").values
+    assert Utilities.read("merged.csv").values == Utilities.read("test_utility/ut_2_test.csv").values
     p.unlink(missing_ok=True)
 
 
 #   testing the creation of a csv file from a given name with different extension
 def test_check_csv(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: "y")
-    assert check_csv("ut_a_test", "merge") == "ut_a_test.csv"
+    assert check_csv("utilities", "merge") == "utilities.csv"
     monkeypatch.setattr("builtins.input", lambda _: "y")
-    assert check_csv("ut_c_test", "file") == "ut_c_test.csv"
+    assert check_csv("utilities", "file") == "utilities.csv"
 
 
 #   testing the interruption of the program
